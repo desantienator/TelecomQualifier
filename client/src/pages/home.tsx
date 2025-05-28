@@ -191,40 +191,40 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 mt-16">
+      <footer className="bg-card border-t border-border mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid md:grid-cols-4 gap-8">
             <div className="col-span-2">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">NextGen Telecom Marketplace</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-lg font-semibold text-foreground mb-4">NextGen Telecom Marketplace</h3>
+              <p className="text-muted-foreground mb-4">
                 Simplifying telecom service discovery and qualification for businesses across Australia. 
                 Connect with multiple providers and find the best solutions for your needs.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li><a href="#" className="hover:text-gray-900">Service Qualification</a></li>
-                <li><a href="#" className="hover:text-gray-900">Multi-Site Analysis</a></li>
-                <li><a href="#" className="hover:text-gray-900">Quote Management</a></li>
-                <li><a href="#" className="hover:text-gray-900">Provider Directory</a></li>
+              <h4 className="font-semibold text-foreground mb-4">Services</h4>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground">Service Qualification</a></li>
+                <li><a href="#" className="hover:text-foreground">Multi-Site Analysis</a></li>
+                <li><a href="#" className="hover:text-foreground">Quote Management</a></li>
+                <li><a href="#" className="hover:text-foreground">Provider Directory</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-gray-900 mb-4">Support</h4>
-              <ul className="space-y-2 text-gray-600">
-                <li><a href="#" className="hover:text-gray-900">Help Center</a></li>
-                <li><a href="#" className="hover:text-gray-900">Contact Us</a></li>
-                <li><a href="#" className="hover:text-gray-900">API Documentation</a></li>
-                <li><a href="#" className="hover:text-gray-900">Status Page</a></li>
+              <h4 className="font-semibold text-foreground mb-4">Support</h4>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><a href="#" className="hover:text-foreground">Help Center</a></li>
+                <li><a href="#" className="hover:text-foreground">Contact Us</a></li>
+                <li><a href="#" className="hover:text-foreground">API Documentation</a></li>
+                <li><a href="#" className="hover:text-foreground">Status Page</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-gray-500 text-sm">© 2024 NextGen Telecom Marketplace. All rights reserved.</p>
+          <div className="border-t border-border mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
+            <p className="text-muted-foreground text-sm">© 2024 NextGen Telecom Marketplace. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 sm:mt-0">
-              <a href="#" className="text-gray-500 hover:text-gray-700 text-sm">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-gray-700 text-sm">Terms of Service</a>
+              <a href="#" className="text-muted-foreground hover:text-foreground text-sm">Privacy Policy</a>
+              <a href="#" className="text-muted-foreground hover:text-foreground text-sm">Terms of Service</a>
             </div>
           </div>
         </div>
