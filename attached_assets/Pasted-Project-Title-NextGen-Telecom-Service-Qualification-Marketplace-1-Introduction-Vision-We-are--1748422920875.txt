@@ -1,0 +1,101 @@
+Project Title: NextGen Telecom Service Qualification Marketplace
+
+1. Introduction & Vision:
+
+We are looking to develop a cutting-edge, user-centric web application that will serve as a comprehensive telecommunications service qualification marketplace. The platform's primary goal is to simplify and streamline the process for businesses and individuals to identify available telecom services (e.g., fiber, NBN, business-grade internet, voice services, SD-WAN, SASE) for single or multiple locations. A key requirement is its ability to seamlessly integrate with various telecommunication provider APIs for real-time service availability and preliminary technical feasibility. The platform should guide users through the qualification process, present clear results, and facilitate requesting quotations directly from providers.
+
+2. Core Objectives:
+
+Simplified Service Discovery: Enable users to easily determine which telecom services from a multitude of providers are available at specific addresses.
+Effortless Multi-Provider API Integration: Design a robust backend architecture that allows for scalable and maintainable integration with diverse third-party provider APIs for service qualification.
+Guided User Experience (UX): Provide an intuitive, step-by-step process for both single-site and multi-site qualifications, catering to users with varying technical expertise.
+Clear & Actionable Results: Present qualification results in a consistent, easy-to-understand format, detailing available services, technologies, and potential service parameters (e.g., indicative speeds, service types).
+Streamlined Quotation Request: Allow users to select desired services and providers from the qualification results and directly request a formal quotation.
+3. Key Features & Functionality:
+
+3.1. User Registration & Management (Optional - TBD based on business model):
+* Secure user registration and login (if required for saving searches, managing quotes).
+* Profile management for contact details and company information (if applicable).
+
+3.2. Service Qualification Engine:
+* Address Input & Validation:
+* Intuitive address lookup/autocomplete feature (e.g., Google Places API integration or similar).
+* Manual address entry with validation.
+* Support for various address formats, including unit/suite numbers.
+* Single-Site Qualification:
+* A clear, guided workflow for users to input a single address.
+* Selection of desired service types (e.g., internet, voice, specific technologies – allow for multi-select).
+* Multi-Site Qualification:
+* User-friendly interface for bulk address input (e.g., CSV upload, copy-paste list).
+* Ability to apply desired service types to all or selected addresses in the batch.
+* Progress indicators for batch processing.
+* API Integration Layer:
+* Modular design to easily add, configure, and manage APIs from multiple telecom providers.
+* Standardized request/response format internally, with adaptors for each provider's unique API specifications.
+* Robust error handling and logging for API communications (e.g., timeouts, authentication failures, invalid responses from provider APIs).
+* Capability to perform concurrent API calls for faster multi-provider qualification.
+* Mechanism to manage API keys, credentials, and rate limits securely for each provider.
+
+3.3. Qualification Results Display:
+* Aggregated View: For multi-site qualifications, provide a summary view showing the number of qualified sites per provider/service.
+* Detailed Site View:
+* For each queried address, display a list of providers and the services they can offer.
+* Clearly indicate:
+* Provider Name & Logo.
+* Service Type (e.g., Business Fibre, NBN FTTP, Ethernet, SIP Trunks).
+* Technology (e.g., Fibre, Copper, Wireless, Satellite).
+* Indicative speed tiers or bandwidth options available (if returned by API).
+* Any other relevant preliminary qualification data (e.g., distance to exchange, estimated lead time if available).
+* Consistent presentation format across different providers.
+* Filtering and sorting options for results (e.g., by provider, service type, speed).
+* "No Service" Handling: Clearly communicate if no services are found for a specific address or if a provider's API does not return a result, with user-friendly messaging.
+
+3.4. Request for Quotation (RFQ) Module:
+* Users can select one or more qualified services/providers from the results page.
+* A "Request Quote" button or similar call-to-action.
+* A simple RFQ form that pre-populates with:
+* Selected site address(es).
+* Selected service(s) and provider(s).
+* User contact information (from profile if logged in, or manual entry).
+* Option for users to add specific requirements or notes for the provider(s).
+* Confirmation to the user that the RFQ has been submitted.
+* Backend mechanism to route the RFQ information to the respective provider(s) (e.g., via email notification with structured data, direct API integration if supported by the provider for RFQs, or an internal portal for providers).
+
+3.5. Admin & Provider Management (Backend):
+* Interface for administrators to manage provider integrations (add/edit API endpoints, credentials).
+* Monitoring and reporting on API usage and success/failure rates.
+* (Optional) Portal for providers to manage their service offerings or view incoming RFQs if not fully automated.
+
+4. User Experience & Design Principles:
+
+Intuitive Navigation: Clean, simple, and logical site structure.
+Guided Workflows: Utilize progress bars, clear instructions, and contextual help to guide users, especially for multi-site qualifications.
+Responsive Design: Ensure optimal viewing and interaction experience across desktops, tablets, and mobile devices.
+Performance: Fast loading times for address lookups and qualification results (optimize API calls and data processing).
+Accessibility: Adhere to WCAG 2.1 AA guidelines where feasible.
+Clear Visual Feedback: Provide immediate feedback for user actions (e.g., successful submission, errors).
+5. Technical Considerations:
+
+Scalability: The architecture should be able to handle a growing number of users, addresses, and provider APIs.
+Security: Implement robust security measures to protect user data, API credentials, and platform integrity (e.g., HTTPS, data encryption, secure authentication).
+Modularity: Design components (e.g., address validation, API connectors, RFQ module) to be loosely coupled for easier maintenance and future enhancements.
+API First Approach (Recommended): Consider designing the platform with an API-first approach to potentially allow other systems to interact with it in the future.
+Technology Stack: (To be determined, but suggest modern, scalable technologies - e.g., Python/Django/Flask, Node.js/React/Vue, Ruby on Rails for web framework; PostgreSQL/MySQL for database; consider a message queue like RabbitMQ or Kafka for asynchronous processing of batch qualifications).
+6. Non-Functional Requirements:
+
+Reliability: High uptime and availability.
+Maintainability: Clean, well-documented code and a well-defined architecture.
+Extensibility: Easy to add new providers and service types.
+7. Deliverables (for the development team):
+
+Fully functional web application meeting all specified features.
+Technical documentation (architecture, API integration guides for new providers).
+Deployment scripts and instructions.
+Test plans and reports.
+8. Success Metrics:
+
+Number of successful single and multi-site qualifications processed.
+Average time taken for a user to complete a qualification.
+Number of RFQs generated through the platform.
+User satisfaction/feedback.
+Ease and speed of onboarding new telecom provider APIs.
