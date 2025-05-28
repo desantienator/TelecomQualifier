@@ -153,20 +153,20 @@ export function QualificationResults({
 
       {/* Results Summary */}
       <Card>
-        <CardContent className="p-6 bg-gray-50">
+        <CardContent className="p-6 bg-muted">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-6">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">{totalProviders}</div>
-                <div className="text-sm text-gray-600">Providers</div>
+                <div className="text-sm text-muted-foreground">Providers</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-green-600">{totalServices}</div>
-                <div className="text-sm text-gray-600">Services Available</div>
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">{totalServices}</div>
+                <div className="text-sm text-muted-foreground">Services Available</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-amber-600">{maxSpeed}</div>
-                <div className="text-sm text-gray-600">Mbps Max Speed</div>
+                <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">{maxSpeed}</div>
+                <div className="text-sm text-muted-foreground">Mbps Max Speed</div>
               </div>
             </div>
             <Button 
@@ -182,7 +182,7 @@ export function QualificationResults({
 
       {/* Service Results */}
       <Card>
-        <CardContent className="divide-y divide-gray-200">
+        <CardContent className="divide-y divide-border">
           {sortedResults.map((result, index) => (
             <div key={`${result.providerId}-${index}`} className="p-6">
               <div className="flex items-start justify-between">
@@ -196,31 +196,31 @@ export function QualificationResults({
                     <div className="flex items-center space-x-3 mb-2">
                       {getProviderLogo(result.providerLogo, result.providerName)}
                       <div>
-                        <h4 className="text-lg font-semibold text-gray-900">{result.providerName}</h4>
-                        <p className="text-sm text-gray-600">{result.serviceType}</p>
+                        <h4 className="text-lg font-semibold text-foreground">{result.providerName}</h4>
+                        <p className="text-sm text-muted-foreground">{result.serviceType}</p>
                       </div>
                     </div>
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-3">
                       <div>
-                        <div className="text-sm font-medium text-gray-700">Technology</div>
-                        <div className="text-sm text-gray-900">{result.technology}</div>
+                        <div className="text-sm font-medium text-muted-foreground">Technology</div>
+                        <div className="text-sm text-foreground">{result.technology}</div>
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-gray-700">Max Speed</div>
-                        <div className="text-sm text-gray-900">{result.maxSpeed}</div>
+                        <div className="text-sm font-medium text-muted-foreground">Max Speed</div>
+                        <div className="text-sm text-foreground">{result.maxSpeed}</div>
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-gray-700">Service Class</div>
-                        <div className="text-sm text-gray-900">{result.serviceClass}</div>
+                        <div className="text-sm font-medium text-muted-foreground">Service Class</div>
+                        <div className="text-sm text-foreground">{result.serviceClass}</div>
                       </div>
                       <div>
-                        <div className="text-sm font-medium text-gray-700">Install Time</div>
-                        <div className="text-sm text-gray-900">{result.installTime}</div>
+                        <div className="text-sm font-medium text-muted-foreground">Install Time</div>
+                        <div className="text-sm text-foreground">{result.installTime}</div>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
                       {getStatusBadge(result.status)}
-                      <span className="text-sm text-gray-600">
+                      <span className="text-sm text-muted-foreground">
                         {result.features[0]}
                       </span>
                     </div>
@@ -241,7 +241,7 @@ export function QualificationResults({
 
       {/* Results Actions */}
       <Card>
-        <CardContent className="p-6 bg-gray-50">
+        <CardContent className="p-6 bg-muted">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
             <div className="flex items-center space-x-4">
               <Button variant="ghost" onClick={selectAll} className="text-primary">
