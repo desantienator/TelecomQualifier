@@ -107,16 +107,16 @@ export function QuoteRequestModal({
 
         <div className="space-y-6">
           {/* Selected Services */}
-          <div className="bg-gray-50 rounded-lg p-4">
-            <h4 className="font-medium text-gray-900 mb-3">Selected Services</h4>
+          <div className="bg-muted rounded-lg p-4">
+            <h4 className="font-medium text-foreground mb-3">Selected Services</h4>
             <div className="space-y-2">
               {selectedServices.map((service, index) => (
                 <div key={`${service.providerId}-${index}`} className="flex items-center justify-between">
                   <div className="flex items-center">
                     {getProviderLogo(service.providerLogo)}
                     <div>
-                      <p className="font-medium text-gray-900">{service.providerName}</p>
-                      <p className="text-sm text-gray-500">{service.serviceType} - {service.maxSpeed}</p>
+                      <p className="font-medium text-foreground">{service.providerName}</p>
+                      <p className="text-sm text-muted-foreground">{service.serviceType} - {service.maxSpeed}</p>
                     </div>
                   </div>
                   <Badge className="bg-primary/10 text-primary hover:bg-primary/10">
