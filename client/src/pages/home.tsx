@@ -5,6 +5,7 @@ import { QualificationResults } from "@/components/qualification-results";
 import { QuoteRequestModal } from "@/components/quote-request-modal";
 import { LoadingState } from "@/components/ui/loading-state";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { useQualification } from "@/hooks/use-qualification";
 
 type ViewState = 'form' | 'loading' | 'results';
@@ -84,6 +85,7 @@ export default function Home() {
               </nav>
             </div>
             <div className="flex items-center space-x-4">
+              <ThemeToggle />
               {viewState === 'results' && (
                 <Button 
                   variant="outline" 

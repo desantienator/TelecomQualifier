@@ -1,0 +1,42 @@
+pm2 logs nextgen-telecom
+┌────┬────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name               │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0  │ nextgen-telecom    │ default     │ N/A     │ fork    │ 3951     │ 13s    │ 0    │ online    │ 0%       │ 90.1mb   │ root     │ disabled │
+└────┴────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+[TAILING] Tailing last 15 lines for [nextgen-telecom] process (change the value with --lines option)
+/root/.pm2/logs/nextgen-telecom-error.log last 15 lines:
+0|nextgen- | 10:10:28 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=TDn-9_yWQLQ9m8D5vPlYv (resolved id: /src/main.tsx?v=TDn-9_yWQLQ9m8D5vPlYv). Does the file exist?
+0|nextgen- | 10:10:28 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=YbhUQQyONkP97_4zNXL3G (resolved id: /src/main.tsx?v=YbhUQQyONkP97_4zNXL3G). Does the file exist?
+0|nextgen- | 10:10:29 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=1rWuB1R7wwApVh7h3fHH7 (resolved id: /src/main.tsx?v=1rWuB1R7wwApVh7h3fHH7). Does the file exist?
+0|nextgen- | 10:10:29 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=TOcL--AS7PSP543Y9Jvks (resolved id: /src/main.tsx?v=TOcL--AS7PSP543Y9Jvks). Does the file exist?
+0|nextgen- | 10:10:30 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=hd4WLqw32N2lfB3r-vScr (resolved id: /src/main.tsx?v=hd4WLqw32N2lfB3r-vScr). Does the file exist?
+0|nextgen- | 10:10:31 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=EPDE7u5yITvtNP0YmLaSO (resolved id: /src/main.tsx?v=EPDE7u5yITvtNP0YmLaSO). Does the file exist?
+0|nextgen- | 10:10:32 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=eEpBn4aRwD7TonyRdF-Fd (resolved id: /src/main.tsx?v=eEpBn4aRwD7TonyRdF-Fd). Does the file exist?
+0|nextgen- | 10:10:32 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=G03wBKKAdOsks52_MDqpi (resolved id: /src/main.tsx?v=G03wBKKAdOsks52_MDqpi). Does the file exist?
+0|nextgen- | 10:10:33 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=bhCuQMQjifZNJd9KKaHnh (resolved id: /src/main.tsx?v=bhCuQMQjifZNJd9KKaHnh). Does the file exist?
+0|nextgen- | 10:10:33 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=SsH_uOI58-kzbn_HuQO3T (resolved id: /src/main.tsx?v=SsH_uOI58-kzbn_HuQO3T). Does the file exist?
+0|nextgen- | 10:10:34 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=zol94Sug0_q1pU4G7hn5a (resolved id: /src/main.tsx?v=zol94Sug0_q1pU4G7hn5a). Does the file exist?
+0|nextgen- | 10:10:35 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=3R9bZ8zj9MAAXGlkHw1GZ (resolved id: /src/main.tsx?v=3R9bZ8zj9MAAXGlkHw1GZ). Does the file exist?
+0|nextgen- | 10:10:36 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=9I1fwK9mLTS2pqGmbfNoj (resolved id: /src/main.tsx?v=9I1fwK9mLTS2pqGmbfNoj). Does the file exist?
+0|nextgen- | 10:10:37 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=AUReaXUOSrjw-eiFAyfWT (resolved id: /src/main.tsx?v=AUReaXUOSrjw-eiFAyfWT). Does the file exist?
+0|nextgen- | 10:10:38 AM [vite] Pre-transform error: Failed to load url /src/main.tsx?v=bUQoFdOyqCJivVWLycV4E (resolved id: /src/main.tsx?v=bUQoFdOyqCJivVWLycV4E). Does the file exist?
+
+/root/.pm2/logs/nextgen-telecom-out.log last 15 lines:
+0|nextgen- | 10:10:28 AM [express] serving on port 5001
+0|nextgen- | 10:10:28 AM [express] serving on port 5001
+0|nextgen- | 10:10:29 AM [express] serving on port 5001
+0|nextgen- | 10:10:29 AM [express] serving on port 5001
+0|nextgen- | 10:10:30 AM [express] serving on port 5001
+0|nextgen- | 10:10:31 AM [express] serving on port 5001
+0|nextgen- | 10:10:32 AM [express] serving on port 5001
+0|nextgen- | 10:10:32 AM [express] serving on port 5001
+0|nextgen- | 10:10:33 AM [express] serving on port 5001
+0|nextgen- | 10:10:34 AM [express] serving on port 5001
+0|nextgen- | 10:10:35 AM [express] serving on port 5001
+0|nextgen- | 10:10:35 AM [express] serving on port 5001
+0|nextgen- | 10:10:36 AM [express] serving on port 5001
+0|nextgen- | 10:10:37 AM [express] serving on port 5001
+0|nextgen- | 10:12:19 AM [express] serving on port 5000
+
+^C
