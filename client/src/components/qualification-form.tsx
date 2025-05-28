@@ -64,10 +64,10 @@ export function QualificationForm({ onQualificationStart, onQualificationComplet
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+    <div className="bg-card rounded-xl shadow-sm border border-border p-8">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Find Available Telecom Services</h1>
-        <p className="text-gray-600">Enter an address to discover available internet, voice, and data services from multiple providers.</p>
+        <h1 className="text-2xl font-bold text-foreground mb-2">Find Available Telecom Services</h1>
+        <p className="text-muted-foreground">Enter an address to discover available internet, voice, and data services from multiple providers.</p>
       </div>
 
       <Form {...form}>
@@ -79,7 +79,7 @@ export function QualificationForm({ onQualificationStart, onQualificationComplet
                 name="address"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="flex items-center text-sm font-medium text-gray-700">
+                    <FormLabel className="flex items-center text-sm font-medium text-foreground">
                       <MapPin className="w-4 h-4 mr-2" />
                       Address
                     </FormLabel>
@@ -90,7 +90,7 @@ export function QualificationForm({ onQualificationStart, onQualificationComplet
                         {...field}
                       />
                     </FormControl>
-                    <p className="text-sm text-gray-500">We'll automatically validate and format your address</p>
+                    <p className="text-sm text-muted-foreground">We'll automatically validate and format your address</p>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -103,7 +103,7 @@ export function QualificationForm({ onQualificationStart, onQualificationComplet
                 name="serviceTypes"
                 render={() => (
                   <FormItem>
-                    <FormLabel className="flex items-center text-sm font-medium text-gray-700">
+                    <FormLabel className="flex items-center text-sm font-medium text-foreground">
                       <Network className="w-4 h-4 mr-2" />
                       Service Types
                     </FormLabel>
