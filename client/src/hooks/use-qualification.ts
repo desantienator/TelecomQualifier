@@ -10,7 +10,9 @@ export function useCreateQualification() {
       const response = await apiRequest("POST", "/api/qualifications", data);
       return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (qualification) => {
+      // Set the qualification data directly in the cache
+      queryClient.setQueryData(["/api/qualifications", qualification.id], qualification);
       queryClient.invalidateQueries({ queryKey: ["/api/qualifications"] });
     },
   });
@@ -19,6 +21,12 @@ export function useCreateQualification() {
 export function useQualification(id: number | undefined) {
   return useQuery<Qualification>({
     queryKey: ["/api/qualifications", id],
+    queryFn: async () => {
+      if (!id) throw new Error("No qualification ID provided");
+      const response = await fetch(`/api/qualifications/${id}`);
+      if (!response.ok) throw new Error("Failed to fetch qualification");
+      return response.json();
+    },
     enabled: !!id,
   });
 }
