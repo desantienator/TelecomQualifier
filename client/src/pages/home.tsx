@@ -23,7 +23,10 @@ export default function Home() {
 
   const handleQualificationComplete = (id: number) => {
     setQualificationId(id);
-    setViewState('results');
+    // Add a small delay to ensure the qualification data is available
+    setTimeout(() => {
+      setViewState('results');
+    }, 500);
   };
 
   const handleRequestQuotes = (providerIds: string[]) => {
@@ -45,24 +48,51 @@ export default function Home() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <div className="flex items-center">
+                <button 
+                  onClick={handleNewQualification}
+                  className="flex items-center hover:opacity-80 transition-opacity"
+                >
                   <Network className="text-primary text-2xl mr-3" />
                   <span className="text-xl font-bold text-gray-900">NextGen Telecom</span>
-                </div>
+                </button>
               </div>
               <nav className="hidden md:ml-8 md:flex md:space-x-8">
-                <a href="#" className="text-primary border-b-2 border-primary px-1 pt-1 pb-4 text-sm font-medium">
+                <button 
+                  onClick={handleNewQualification}
+                  className={`px-1 pt-1 pb-4 text-sm font-medium ${
+                    viewState === 'form' || viewState === 'loading' 
+                      ? 'text-primary border-b-2 border-primary' 
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
                   Service Qualification
-                </a>
-                <a href="#" className="text-gray-500 hover:text-gray-700 px-1 pt-1 pb-4 text-sm font-medium">
-                  My Quotes
-                </a>
+                </button>
+                <button 
+                  className={`px-1 pt-1 pb-4 text-sm font-medium ${
+                    viewState === 'results' 
+                      ? 'text-primary border-b-2 border-primary' 
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                  disabled={!qualification}
+                  onClick={() => qualification && setViewState('results')}
+                >
+                  Results
+                </button>
                 <a href="#" className="text-gray-500 hover:text-gray-700 px-1 pt-1 pb-4 text-sm font-medium">
                   Help
                 </a>
               </nav>
             </div>
             <div className="flex items-center space-x-4">
+              {viewState === 'results' && (
+                <Button 
+                  variant="outline" 
+                  onClick={handleNewQualification}
+                  className="border-primary text-primary hover:bg-primary hover:text-white"
+                >
+                  New Search
+                </Button>
+              )}
               <Button className="bg-primary text-white hover:bg-primary/90">
                 Sign In
               </Button>
@@ -73,6 +103,32 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Breadcrumb Navigation */}
+        {viewState !== 'form' && (
+          <nav className="flex mb-6" aria-label="Breadcrumb">
+            <ol className="flex items-center space-x-1 md:space-x-2">
+              <li className="flex">
+                <button
+                  onClick={handleNewQualification}
+                  className="text-gray-400 hover:text-gray-500 text-sm font-medium"
+                >
+                  Service Qualification
+                </button>
+              </li>
+              <li>
+                <div className="flex items-center">
+                  <svg className="flex-shrink-0 h-4 w-4 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="ml-1 md:ml-2 text-sm font-medium text-gray-500">
+                    {viewState === 'loading' ? 'Processing...' : 'Results'}
+                  </span>
+                </div>
+              </li>
+            </ol>
+          </nav>
+        )}
+
         {viewState === 'form' && (
           <QualificationForm
             onQualificationStart={handleQualificationStart}
@@ -81,11 +137,21 @@ export default function Home() {
         )}
 
         {viewState === 'loading' && (
-          <LoadingState
-            title="Checking Service Availability"
-            description="Querying multiple providers for the best options..."
-            progress={65}
-          />
+          <div className="space-y-4">
+            <LoadingState
+              title="Checking Service Availability"
+              description="Querying multiple providers for the best options..."
+              progress={65}
+            />
+            <div className="text-center">
+              <button
+                onClick={handleNewQualification}
+                className="text-primary hover:text-primary/80 text-sm font-medium"
+              >
+                Cancel and Start New Search
+              </button>
+            </div>
+          </div>
         )}
 
         {viewState === 'results' && qualification?.results && (
@@ -95,6 +161,21 @@ export default function Home() {
             onRequestQuotes={handleRequestQuotes}
             onNewQualification={handleNewQualification}
           />
+        )}
+
+        {viewState === 'results' && qualification && !qualification.results && (
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center">
+            <div className="text-gray-400 mb-4">
+              <Network className="w-16 h-16 mx-auto" />
+            </div>
+            <h3 className="text-lg font-medium text-gray-900 mb-2">No Services Found</h3>
+            <p className="text-gray-600 mb-6">
+              We couldn't find any available services for this address. This could be due to location limitations or temporary provider issues.
+            </p>
+            <Button onClick={handleNewQualification} className="bg-primary text-white hover:bg-primary/90">
+              Try Another Address
+            </Button>
+          </div>
         )}
 
         {/* Quote Request Modal */}
