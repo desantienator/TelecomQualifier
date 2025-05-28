@@ -1,20 +1,19 @@
 export default {
   apps: [{
     name: "nextgen-telecom",
-    script: "server/index.ts",
+    script: "dist/index.js",
     interpreter: "node",
-    interpreter_args: "--loader tsx",
     instances: 1,
     exec_mode: "cluster",
     watch: false,
     max_memory_restart: "1G",
     env: {
       NODE_ENV: "development",
-      PORT: 5000
+      PORT: 3000
     },
     env_production: {
       NODE_ENV: "production",
-      PORT: 5000
+      PORT: 3000
     },
     error_file: "./logs/err.log",
     out_file: "./logs/out.log",
